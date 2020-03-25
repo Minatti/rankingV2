@@ -1,0 +1,30 @@
+na instalação criei um servidor local
+SqlStudio, clicar com o botao direito na conexao ir em segurança alterar a autenticação
+conectar com user do windows, dps ir em seg e criar usuario
+instalei ultima versão xampp
+ultima versão php_drivers
+
+
+
+users(id, id_permission, cpf, name, username, password, token)
+permission_groups(id, name)
+permission_items(id, name, slug) qual é o contexto do slug?
+permission_links(id, id_permission_group, id_permission_item)
+wallets(id, id_products, name, )
+products
+rankings
+goals
+files
+historics
+
+
+Models
+
+Users
+Wallets
+Products
+
+Implementação do AdminLte
+git clone
+copiar dist/bower_components > assets
+starter > template

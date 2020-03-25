@@ -157,7 +157,7 @@ class PermissionsController extends Controller {
 
 	public function edit($id){
 		if(!empty($id)) {
-			$this->arrInfo['errorItems'];
+			
 
 			$p = new Permissions();
 

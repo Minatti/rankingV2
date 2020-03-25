@@ -8,11 +8,11 @@
 
           <form action="<?php echo BASE_URL; ?>permissions/add_action" method="POST">
             <!-- Default box -->
-            <div class="card card-success">
+            <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Novo grupo de Permissão</h3>
                 <div class="card-tools">
-                  <input type="submit" class="btn btn-sm btn-default" value="Salvar"/>                
+                  <input type="submit" class="btn btn-sm btn-success" value="Salvar"/>                
                 </div>
               </div>
               <div class="card-body">

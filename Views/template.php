@@ -19,9 +19,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
-<div class="wrapper">
+  <div class="wrapper">
 
-  <!-- Navbar -->
+    <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-light navbar-dark">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -29,7 +29,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="<?php echo BASE_URL; ?>" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="" class="nav-link">Graph<small class="text-danger">(EM BREVE)</small></a>
@@ -72,54 +72,78 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a href="#" class="d-block"><?php echo $viewData['user']->getName(); ?> </a>
+          <a href="" class="d-block"><?php echo $viewData['user']->getName(); ?> </a>
         </div>
       </div>
       
-
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="header">Menu</li>
-            <ul class="nav nav-treeview">
-              <?php if($viewData['user']->hasPermission('pview')): ?>
-              <li class="nav-item <?php echo($viewData['menuActive']=='permissions')?'active':'';?>">
-                <a href="<?php echo BASE_URL; ?>permissions" class="nav-link active">
-                  <i class="fa fa-link"></i>
-                  <p> Permissões</p>
-                </a>
-              </li>
-            <?php endif;  ?>
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                ADM
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          <ul class="nav nav-treeview">
+          <?php if($viewData['user']->hasPermission('pview')): ?>
+            <li class="nav-item active">
+               <a href="<?php echo BASE_URL; ?>permissions" class="nav-link <?php echo($viewData['menuActive']=='permissions')?'active':'';?>">
+               <i class="nav-icon fas fa-link"></i>
+                <p>
+                  Grupo de Permissões           
+                </p>
+              </a>
+            </li>
+           <?php endif;  ?>    
+        </ul>
+        <ul class="nav nav-treeview">
+          <?php if($viewData['user']->hasPermission('pview')): ?>
+            <li class="nav-item active">
+               <a href="<?php echo BASE_URL;?>wallets" class="nav-link <?php echo($viewData['menuActive']=='wallets')?'active':'';?>">
+               <i class="nav-icon fas fa-link"></i>
+                <p>
+                  Carteiras           
+                </p>
+              </a>
+            </li>
+           <?php endif;  ?>    
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
-
+  <!--
   <!-- Content Wrapper. Contains page content -->
+
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <h1>Teste</h1>
     <div class="content-header">
-      <h1>Teste</h1>
       <div class="container-fluid">
-        <h1>Teste</h1>
         <div class="row mb-2">
-          <h1>Teste</h1>
           <div class="col-sm-6">
-            <h1>Teste</h1>
             <h1 class="m-0 text-dark"></h1>
-            <h1>Teste</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+    <!--
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Starter Page</li>
+    -->
+            </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
+
     </div>
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <div class="content">    
-        <?php $this->loadViewInTemplate($viewName, $viewData); ?>
+    <div class="content">
+      <?php $this->loadViewInTemplate($viewName, $viewData); ?>
     </div>
     <!-- /.content -->
   </div>

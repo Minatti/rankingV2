@@ -111,6 +111,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </li>
            <?php endif;  ?>    
         </ul>
+        <ul class="nav nav-treeview">
+          <?php if($viewData['user']->hasPermission('pview')): ?>
+            <li class="nav-item active">
+               <a href="<?php echo BASE_URL;?>products" class="nav-link <?php echo($viewData['menuActive']=='')?'active':'';?>">
+               <i class="nav-icon fas fa-link"></i>
+                <p>
+                  Produtos           
+                </p>
+              </a>
+            </li>
+           <?php endif;  ?>    
+        </ul>        
       </nav>
       <!-- /.sidebar-menu -->
     </div>

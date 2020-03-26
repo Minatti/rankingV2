@@ -12,29 +12,30 @@
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">                                                    
-                  <h3 class="card-title">Carteiras</h3>
+                  <h3 class="card-title">Produtos</h3>
                   <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                       <i class="fas fa-minus"></i>
                   </button>              
-                   <a href="<?php echo BASE_URL.'wallets/add'; ?>" class="btn btn-sm btn-success">Adicionar</a>
+                   <a href="<?php echo BASE_URL.'products/add'; ?>" class="btn btn-sm btn-success">Adicionar</a>
                   </div>
                 </div>
                   <div class="card-body">
           					<table class="table">
           						<tr>
           						<th>ID</th>
+                      <th>Carteira</th>
           						<th>Nome</th>
-          						<th width="100">Ações</th>						   								
+          						<th width="100">Ações</th>                      						   							
           						</tr>          					
-          						<?php foreach ($list as $item):   ?>												
+          						<?php foreach ($data as $item):   ?>												
           						<tr>
                         <td><?php echo $item['id']?></td>
           							<td><?php echo $item['name']?></td>						
           							<td>
           								<div class="btn-group">
-          									<a href="<?php echo BASE_URL.'wallets/edit/'.$item['id'];?>" class="btn btn-xs btn-primary"> Editar </a>
-          									<a href="<?php echo BASE_URL.'wallets/delete/'.$item['id'];?>"  class="btn btn-xs btn-danger <?php echo ($item['total_products']!='0')?'disabled':'' ?>"> Excluir </a>
+          									<a href="<?php echo BASE_URL.'products/edit/'.$item['id'];?>" class="btn btn-xs btn-primary"> Editar </a>
+          									<a href="<?php echo BASE_URL.'products/del/'.$item['id'];?>"  class="btn btn-xs btn-danger <?php echo ($item['total_products']!='0')?'disabled':'' ?>"> Excluir </a>
           								</div>
           							</td>
           						</tr>

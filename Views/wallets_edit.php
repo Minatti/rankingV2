@@ -16,7 +16,6 @@
                 </div>
               </div>
               
-              <?php echo($wallet_name);?>
               <!-- <?php/*** print_r($permission_group_name); ***/?> -->
               <div class="card-body">
                 <div class="form-group">

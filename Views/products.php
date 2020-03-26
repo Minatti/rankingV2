@@ -34,7 +34,7 @@
           							<td>
           								<div class="btn-group">
           									<a href="<?php echo BASE_URL.'wallets/edit/'.$item['id'];?>" class="btn btn-xs btn-primary"> Editar </a>
-          									<a href="<?php echo BASE_URL.'wallets/del/'.$item['id'];?>"  class="btn btn-xs btn-danger <?php echo ($item['total_products']!='0')?'disabled':'' ?>"> Excluir </a>
+          									<a href="<?php echo BASE_URL.'wallets/delete/'.$item['id'];?>"  class="btn btn-xs btn-danger <?php echo ($item['total_products']!='0')?'disabled':'' ?>"> Excluir </a>
           								</div>
           							</td>
           						</tr>

@@ -73,7 +73,7 @@ class WalletsController extends Controller {
 			$w = new Wallets();
 
 			$this->arrInfo['wallet_name'] = $w->getName($id);
-			$this->arrInfo['wallets_id'] = $id;
+			$this->arrInfo['wallet_id'] = $id;
 
 
 		if (isset($_SESSION['formError']) && count($_SESSION['formError']) > 0) {
@@ -94,8 +94,38 @@ class WalletsController extends Controller {
 	}
 
 
-	public function edit_action(){
+	public function edit_action($id){
+		if(!empty($id)) {
+			$w = new Wallets();
+		if(!empty($_POST['name'])){
+			$name = $_POST['name'];
 		
-	}			
+			$w->alterNamebyId($name, $id);
+			
 
+			header("Location: ".BASE_URL.'wallets');
+			exit;
+
+		} else {
+			$_SESSION['formError'] = array('name');
+
+			header("Location: ".BASE_URL.'wallets/edit/'.$id);
+			exit;
+		}
+			
+		} else {
+			header("Location: ".BASE_URL.'wallets');
+			exit;
+		}		
+	  }		
+
+
+	  public function del($id){
+
+	  		$w = new Wallets();
+
+	  		$w->deleteWalletEmptyProduct($id);
+
+	  		header("Location: ".BASE_URL.'wallets');
+	  }
 }

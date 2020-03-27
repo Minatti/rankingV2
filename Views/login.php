@@ -21,7 +21,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href=""><b>RANK</b> 2.0 </a>
+    <b class="text-muted">RANK</b> 2.0
   </div>
   <!-- /.login-logo -->
   <div class="card">

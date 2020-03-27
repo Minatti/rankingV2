@@ -45,6 +45,7 @@ class ProductsController extends Controller {
 
 	public function add(){
 
+		 $p = new Products();
 		 $w = new Wallets();
 
 		 $this->arrInfo['list'] = $w->getAll();
@@ -61,4 +62,32 @@ class ProductsController extends Controller {
 		 $this->loadTemplate('products_add', $this->arrInfo);
 	}
 
+
+	public function add_action()
+	{			
+
+			$p = new Products();
+			$w = new Wallets();	
+			
+		if (!empty($_POST['name'])) {
+
+			$name = $_POST['name'];
+			$id = $_POST['wallet'];
+
+			$p->insertProduct($name, $id);
+
+
+			 header("Location: ".BASE_URL.'products');
+
+		} else {
+
+			return false;
+			
+		}
+
+
+
+					
+	}
+	
 }

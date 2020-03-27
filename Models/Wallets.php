@@ -24,8 +24,15 @@ class Wallets extends Model {
   		if ($sql->rowCount() === -1) 
   		{
   			$list = $sql->fetchAll(\PDO::FETCH_ASSOC);
-  			//print_r($sql);
-  			//exit;
+  		/****	
+  			foreach ($list as $i) {
+  				
+
+  				echo "<pre>";
+  				print_r($i['id']);
+  				exit;
+  			}
+  		***/	
   		}
 
 		return $list;

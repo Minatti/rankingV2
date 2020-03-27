@@ -24,7 +24,7 @@
                   <label for="wallet">Carteira</label>
                   <select class="form-control" id="id_wallet" name="wallet">
                   <?php foreach($list as $i): ?>                      
-                        <option value="<?php echo $i['item'];?>"><?php echo $i['name'];?></option>
+                        <option value="<?php echo $i['id'];?>"><?php echo $i['name'];?></option>
                   <?php endforeach; ?>  
                   </select>    
               </div>

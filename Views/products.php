@@ -21,14 +21,14 @@
                   </div>
                 </div>
                   <div class="card-body">
-          					<table class="table">
-          						<tr>          				
-                      <th>Carteira</th>
-          						<th>Nome</th>
+          					<table class="table table-sm table-hover table-bordered">
+          						<tr class="bg-lightblue text-center">          				
+                      <th width="200">Carteira</th>
+          						<th width="200">Produto</th>
           						<th width="100">Ações</th>                      						   							
           						</tr>          					
           						<?php foreach ($data as $item):   ?>												
-          						<tr>
+          						<tr class="text-center">
                         <td><?php echo $item['wallet']?></td>
                         <td><?php echo $item['product']?></td>           						
           							<td>

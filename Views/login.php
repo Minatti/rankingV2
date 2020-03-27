@@ -25,17 +25,17 @@
   </div>
   <!-- /.login-logo -->
   <div class="card">
-    <div class="card-body login-card-body">
+    <div class="card-body login-card-body"  style="border-radius: 1px 1px 1px 2px; border-color: 0.5px #000; border-style: solid; border-width: 0.1px;">
       <p class="login-box-msg">Entre para iniciar sua sessão</p>
 
 
       <?php if (!empty($error)): ?> 
-        <div class="alert alert-danger alert-dismissible">
-            <p><?php echo $error;?></p>
+        <div class="callout callout-danger">
+            <small class="text-danger"><?php echo $error;?></small>
         </div>
       <?php endif;  ?>
       <form action="<?php echo BASE_URL; ?>login/verifyLogin" method="POST">
-        <div class="input-group mb-3">
+        <div class="input-group mb-3" style="border-radius: 5px 3px 5px 3px; border-color: #d9d9d9; border-style: solid; border-width: 0.6px ">
           <input type="text" class="form-control" placeholder="Usuario" name="username">
           <div class="input-group-append">
             <div class="input-group-text">

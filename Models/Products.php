@@ -39,9 +39,9 @@ class Products extends Model {
 
 		$data = array();
 
-		$sql = "SELECT  
-						 w.name as wallet
-	   					,p.name as product
+		$sql = "SELECT
+						  w.name as wallet
+	   					 ,p.name as product
 				FROM wallets as w 
 				INNER JOIN products AS p ON w.id = p.id_wallet";
 
@@ -71,30 +71,6 @@ class Products extends Model {
 
 		return $data;
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	public function getName($id)

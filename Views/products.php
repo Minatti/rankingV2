@@ -22,16 +22,15 @@
                 </div>
                   <div class="card-body">
           					<table class="table">
-          						<tr>
-          						<th>ID</th>
+          						<tr>          				
                       <th>Carteira</th>
           						<th>Nome</th>
           						<th width="100">Ações</th>                      						   							
           						</tr>          					
           						<?php foreach ($data as $item):   ?>												
           						<tr>
-                        <td><?php echo $item['id']?></td>
-          							<td><?php echo $item['name']?></td>						
+                        <td><?php echo $item['wallet']?></td>
+                        <td><?php echo $item['product']?></td>           						
           							<td>
           								<div class="btn-group">
           									<a href="<?php echo BASE_URL.'products/edit/'.$item['id'];?>" class="btn btn-xs btn-primary"> Editar </a>

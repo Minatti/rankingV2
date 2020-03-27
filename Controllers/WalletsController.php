@@ -42,6 +42,15 @@ class WalletsController extends Controller {
 
 
 	public function add(){
+		
+
+		if (isset($_SESSION['formError']) && count($_SESSION['formError']) > 0) {
+
+			$this->arrInfo['errorItems'] = $_SESSION['formError'];
+			//print_r($array['errorItems']);
+			//exit;
+			unset($_SESSION['formError']);
+		}
 
 		$this->loadTemplate('wallets_add', $this->arrInfo);
 	}

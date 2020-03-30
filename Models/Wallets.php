@@ -6,7 +6,25 @@ use \Core\Model;
 class Wallets extends Model {
 
 
-	
+
+	public function getList(){
+
+		$wallets = array();
+
+
+		$sql = "SELECT * FROM wallets";
+		$sql = $this->db->query($sql);
+
+
+		if ($sql->rowCount() === -1) {
+			
+			$wallets = $sql->fetchAll();
+		}
+
+
+		return $wallets;
+
+	}
 	// list all data of wallets //
 	public function getAll()
 	{

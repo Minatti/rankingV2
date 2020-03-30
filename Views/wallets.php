@@ -21,11 +21,11 @@
                   </div>
                 </div>
                   <div class="card-body">
-          					<table class="table">
+          					<table class="table table-hover">
           						<tr>
           						<th>ID</th>
           						<th>Nome</th>
-          						<th width="100">Ações</th>						   								
+          						<th width="150">Ações</th>						   								
           						</tr>          					
           						<?php foreach ($list as $item):   ?>												
           						<tr>

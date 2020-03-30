@@ -5,7 +5,26 @@ use \Core\Model;
 
 class Products extends Model {
 
+	public function getListProducts($id_wallet){
 
+
+			$products = array();
+
+			$sql = "SELECT * FROM products WHERE id_wallet = :id_wallet";
+			$sql = $this->db->prepare($sql);
+			$sql->bindValue(':id_wallet', $id_wallet);
+			$sql->execute();
+
+
+			if ($sql->rowCount() === -1) {
+				
+				$products = $sql->fetchAll(\PDO::FETCH_ASSOC);
+			}
+
+
+			return $products;
+		
+	}
 		
 	public function countProductsInWallet()
 	{

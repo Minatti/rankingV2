@@ -20,13 +20,15 @@
                   <label for="group_name">Nome do Produto</label>
                   <input type="text" name="name" class="form-control <?php echo (in_array('name', $errorItems))?'is-invalid':''; ?>" id="group_name" placeholder="Preencha o campo">
                   <span id="group_name" class="error invalid-feedback" style="">Por favor, insira o novo produto</span>
-                </div>                   
+                </div>
+                <div class="form-group">
                   <label for="wallet">Carteira</label>
-                  <select class="form-control" id="id_wallet" name="wallet">
-                  <?php foreach($list as $i): ?>                      
-                        <option value="<?php echo $i['id'];?>"><?php echo $i['name'];?></option>
-                  <?php endforeach; ?>  
-                  </select>    
+                    <select class="form-control ?php echo (in_array('name', $errorItems))?'is-invalid':''; ?>" id="wallet" name="wallet">
+                    <?php foreach($list as $wallet): ?>                      
+                          <option value="<?php echo $wallet['id'];?>"><?php echo $wallet['name'];?></option>
+                    <?php endforeach; ?>  
+                   </select>
+                </div>                   
               </div>
               <!-- /.card-body -->
             </div>

@@ -1,38 +1,42 @@
     <!-- Main content -->
     <section class="content">
-
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-
-
-          <form action="<?php echo BASE_URL; ?>permissions/add_action" method="POST">
+          <form method="POST" enctype="multipart/form-data">
             <!-- Default box -->
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Novo grupo de Permissão</h3>
+                <h3 class="card-title callout callout-primary text-primary">
+                  <?php   
+                    date_default_timezone_set('America/Sao_Paulo');
+                    setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+                    echo ucfirst(utf8_encode(strftime("%B de %Y")));                    
+                  ?>                    
+                  </h3>
                 <div class="card-tools">
                   <input type="submit" class="btn btn-sm btn-success" value="Salvar"/>                
                 </div>
               </div>
               <div class="card-body">
                 <div class="form-group">
-                  <label for="group_name">Nome do grupo</label>
-                  <input type="text" name="name" class="form-control <?php echo (in_array('name', $errorItems))?'is-invalid':''; ?>" id="group_name" placeholder="Preencha o campo">
-                  <span id="group_name" class="error invalid-feedback" style="">Por favor, insira o novo nome</span>
+                  <label for="select">Selecione a Carteira: </label>
+                    <select class="custom-select ?php echo (in_array('name', $errorItems))?'is-invalid':''; ?>" id="wallet" name="wallet">
+                      <option></option>
+                    <?php foreach($wallets as $wallet): ?>                      
+                          <option value="<?php echo $wallet['id'];?>"><?php echo $wallet['name'];?></option>
+                    <?php endforeach; ?>  
+                   </select>
+                </div> 
+                <div class="form-group">
+                <label for="select">Produto</label>
+                  <select class="custom-select" id="products" name="products">
+
+                  </select>   
                 </div>
-                                
-                <hr/>
-                
-                  <?php foreach($permission_items as $item): ?>
-                    <div class="form-group mb-0">
-                      <div class="custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" name="items[]" value="<?php echo $item['id'];?>" id="item-<?php echo $item['id'];?>" aria-describedby="terms-error" aria-invalid="false" />
-                      <label class="custom-control-label" for="item-<?php echo $item['id']; ?>"><?php echo $item ['name']; ?></label>  
-                      </div>
-                      
-                    </div>
-                  <?php endforeach; ?>
+                <div>
+                    
+                </div>                                 
               </div>
               <!-- /.card-body -->
             </div>
@@ -41,7 +45,7 @@
           </div>
         </div>
       </div>
-    </section>
+ </section>
 
 
 

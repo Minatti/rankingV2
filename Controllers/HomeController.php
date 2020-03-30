@@ -27,6 +27,10 @@ class HomeController extends Controller {
 
 	}
 
-	public function index() {$this->loadTemplate('home', $this->arrInfo);}
+	public function index() {
+
+		$this->loadTemplate('home', $this->arrInfo);
+
+	}
 
 }

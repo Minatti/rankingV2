@@ -16,11 +16,11 @@
                 </div>
               </div>
               <div class="card-body">
-					<table class="table">
+					<table class="table table-hover">
 						<tr>
 						<th>Nome</th>
-						<th width="120">Qtd de ativos</th>
-						<th width="120">Ações</th>						   								
+						<th>Qtd de ativos</th>
+						<th width="150">Ações</th>						   								
 						</tr>
 						
 						<?php foreach ($list as $item):   ?>												

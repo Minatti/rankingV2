@@ -12,11 +12,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title>Rankv2</title>
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="<?php echo BASE_URL;?>/AdminLTE/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="<?php echo BASE_URL;?>AdminLTE/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo BASE_URL;?>/AdminLTE/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="<?php echo BASE_URL;?>AdminLTE/dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
@@ -114,7 +113,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="nav nav-treeview">
           <?php if($viewData['user']->hasPermission('pview')): ?>
             <li class="nav-item active">
-               <a href="<?php echo BASE_URL;?>products" class="nav-link <?php echo($viewData['menuActive']=='')?'active':'';?>">
+               <a href="<?php echo BASE_URL;?>products" class="nav-link <?php echo($viewData['menuActive']=='products')?'active':'';?>">
                <i class="nav-icon fas fa-link"></i>
                 <p>
                   Produtos           
@@ -122,13 +121,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
             </li>
            <?php endif;  ?>    
-        </ul>        
+        </ul>
+        <ul class="nav nav-treeview">
+          <?php if($viewData['user']->hasPermission('pview')): ?>
+            <li class="nav-item active">
+               <a href="<?php echo BASE_URL;?>rankings" class="nav-link <?php echo($viewData['menuActive']=='rankings')?'active':'';?>">
+               <i class="nav-icon fas fa-link"></i>
+                <p>
+                  Rank           
+                </p>
+              </a>
+            </li>
+           <?php endif;  ?>    
+        </ul>                   
       </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
-  <!--
+  
   <!-- Content Wrapper. Contains page content -->
 
   <div class="content-wrapper">
@@ -186,12 +197,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
-
+<script type="text/javascript">var BASE_URL = '<?php echo BASE_URL; ?>'</script>
 <!-- jQuery -->
-<script src="<?php echo BASE_URL; ?>/AdminLTE/plugins/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/jquery-3.4.1.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="<?php echo BASE_URL; ?>/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="<?php echo BASE_URL; ?>AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="<?php echo BASE_URL; ?>/AdminLTE/dist/js/adminlte.min.js"></script>
+<script type="text/javascript" src="<?php echo BASE_URL; ?>AdminLTE/dist/js/adminlte.min.js"></script>
+<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/ajax-script.js"></script>
 </body>
 </html>

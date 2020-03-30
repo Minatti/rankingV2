@@ -49,7 +49,7 @@ class ProductsController extends Controller {
 		 $w = new Wallets();
 
 		 $this->arrInfo['list'] = $w->getAll();
-
+		 //$this->arrInfo['data'] = $p->getAll();
 		if (isset($_SESSION['formError']) && count($_SESSION['formError']) > 0) {
 
 			$this->arrInfo['errorItems'] = $_SESSION['formError'];

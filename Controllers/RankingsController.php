@@ -3,7 +3,11 @@ namespace Controllers;
 
 use \Core\Controller;
 use \Models\Users;
+use \Models\Wallets;
+use \Models\Products;
 use \Models\Rankings;
+
+
 
 class RankingsController extends Controller {
 
@@ -34,11 +38,50 @@ class RankingsController extends Controller {
 
 	// Views //
 	public function index() {
+
 			$r = new Rankings();
-			$this->arrInfo['data'] = $p->getAll();
+
+			$this->arrInfo['list'] = $r->getAll();
 			
 			$this->loadTemplate('rankings', $this->arrInfo);
 	}
+
+
+		public function add() {
+
+			$w = new Wallets();
+
+			$this->arrInfo['wallets'] = $w->getList();
+
+			$this->loadTemplate('rankings_add', $this->arrInfo);
+
+    }
+	
+
+   	 public function get_products(){
+
+
+   	 		if (isset($_POST['wallet'])) {
+
+   	 			$id_wallet = $_POST['wallet'];
+
+   	 			$p = new Products();
+
+   	 			$products = $p->getListProducts($id_wallet);
+
+
+   	 			echo json_encode($products);
+
+   	 			
+   	 		}
+   	 		
+
+   	 }
+
+
+
+
+
 
 
 }

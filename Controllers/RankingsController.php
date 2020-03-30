@@ -79,9 +79,35 @@ class RankingsController extends Controller {
    	 }
 
 
+   	 public function add_action(){
+
+
+   	 	if (!empty($_POST['wallet']) && !empty($_POST['product'])) {
+
+   	 		$id_wallet = $_POST['wallet'];
+			$id_product = $_POST['product'];
+			$files = (!empty($_FILES['files']))?$_FILES['files']:array();			
+			$position = $_POST['postion'];
+			$quartil = $_POST['quartil'];
+			$month = $_POST['month'];
+			$year = $_POST['year'];
+
+			$r = new Rankings();
+
+			$r->add($id_wallet, $id_product, $files, $position, $quartil, $month, $year);
+
+
+			header("Location: ".BASE_URL.'rankings');
+			
+
+   	 	} else {
+
+   	 		return false;
+   	 	}
 
 
 
+   	 }
 
 
 }

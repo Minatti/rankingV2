@@ -3,7 +3,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-          <form method="POST" enctype="multipart/form-data">
+          <form action="<?php echo BASE_URL; ?>rankings/add_action" method="POST" enctype="multipart/form-data">
             <!-- Default box -->
             <div class="card">
               <div class="card-header">
@@ -34,22 +34,22 @@
                 </div> 
                 <div class="form-group">
                 <label for="select">Produto</label>
-                  <select class="custom-select" id="products" name="products" required>
+                  <select class="custom-select" id="products" name="product" required>
 
                   </select>   
                 </div>
                   <div class="form-group">
-                    <label for="file">Anexar</label>
+                    <label for="exampleInputFile">Anexar</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="file" name="file[]">
-                        <label class="custom-file-label" for="file">Anexar arquivo</label>
+                        <input type="file" class="custom-file-input" id="file" name="files[]">
+                        <label class="custom-file-label" for="file">Escolher Arquivo...</label>
                       </div>
                       <div class="input-group-append">
                         <span class="input-group-text" id="">Upload</span>
                       </div>
                     </div>
-                  </div>
+                  </div>        
                    <div class="form-row">
                       <div class="form-group col-md-1">
                         <label for="position">Posição</label>
@@ -61,10 +61,10 @@
                       </div>
                       <div class="form-group col-md-1">
                         <label for="month">Mês</label>
-                        <input type="text" class="form-control" id="month" name="month">
+                        <input type="text" class="form-control" id="month" name="month" required>
                       </div>                      
                       <div class="form-group col-md-2">
-                        <input type="hidden" class="form-control" id="year" value="<?php echo date('Y'); ?>" name="year" disabled>
+                        <input type="hidden" class="form-control" id="year" value="<?php echo date('Y'); ?>" name="year">
                       </div>     
                     </div>
                   </div>                                                                                                                      

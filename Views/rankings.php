@@ -25,7 +25,7 @@
                   <th>Quartil</th>
                   <th>Mês</th>
                   <th>Ano</th>		   								
-      						</tr>      				
+      						</tr>				
       						<?php foreach ($list as $item):  ?>												
       						<tr>
       							<td><?php echo $item['carteira']?></td>

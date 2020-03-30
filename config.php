@@ -5,6 +5,7 @@ $config = array();
 // environment.php alter for production
 if(ENVIRONMENT == 'development') {
 	define("BASE_URL", "http://localhost:82/ranking/");
+	define("PATH_UPLOAD", "uploads/");
 	$config['Database'] = 'Web_Rank';
 	$config['Server'] = 'DESKTOP-2N5IUO8\SQLEXPRESS';
 	$config['dbuser'] = 'developer';

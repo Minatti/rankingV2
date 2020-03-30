@@ -10,7 +10,8 @@
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                     <i class="fas fa-minus"></i>
-                </button>                
+                </button>
+                <a href="<?php echo BASE_URL.'rankings/goals'; ?>" class="btn btn-sm btn-primary">Metas</a>                
                  <a href="<?php echo BASE_URL.'rankings/add'; ?>" class="btn btn-sm btn-success">Adicionar</a>
                 </div>
               </div>

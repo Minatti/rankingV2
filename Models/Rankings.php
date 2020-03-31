@@ -25,7 +25,7 @@ class Rankings extends Model {
 				INNER JOIN products as p on r.id_product = p.id
 
 		";
-		$sql = $this->db->query($sql);
+		$sql = $this->db->query($sql);	
 
 
 		if ($sql->rowCount() <> 0) 
